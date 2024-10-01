@@ -1,0 +1,28 @@
+type Query{
+    findAllEmployee: [Employee]
+    findEmployeeByID(id:Int):Employee
+}
+type Mutation {
+    createEmployee(id:Int,name:String,department:String,email:String,manager_id:Int,salary:Int): Employee
+    addEmployee(emp: EmployeeInput!):Employee
+    updateEmployee(id:Int!,emp: EmployeeInput!):Employee
+    deleteEmployee(id:Int!):Employee
+}
+
+type Employee{
+    id:Int
+    name:String
+    department:String
+    email:String
+    manager_id:Int
+    salary:Int
+}
+input EmployeeInput{
+    id:Int
+    name:String
+    department:String
+    email:String
+    manager_id:Int
+    salary:Int
+}
+
